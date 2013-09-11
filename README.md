@@ -8,7 +8,7 @@ of `window.crypto` and a series of coordinates collected from mouse movements or
 Even though the mouse movements of the user are not very random, it's extra noise, adding a layer of safety. Perhaps each [x,y] mouse
 location is worth a bit or two of entropy.
 
-`more-entropy` achieves the same results but without requiring user interaction, and ugly integrations. 
+`more-entropy` achieves the same results but without user interaction or ugly integration with your DOM. 
 It generates entropy by counting how many operations it can perform in a unit of time, which fluctuates
 unpredictably based on other system processes and low-level architectural specifics (like cache misses and FPU pipelines).
 
@@ -17,7 +17,7 @@ A good use of this module is to combine its output with
 result as a seed for a deterministic random bit generator (like 
 [HMAC_DRBG](http://csrc.nist.gov/publications/nistpubs/800-90A/SP800-90A.pdf)).
 You'll have an extra layer of protection if you're afraid that the
-standard cryptographic primitives are compromised.
+standard random number generators are compromised.
 
 
 ### Installation
