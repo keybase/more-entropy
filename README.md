@@ -38,7 +38,7 @@ c.get_entropy(100, function(vals) {
 This generator repeatedly does as many floating point operations as it can in 1ms-2ms time periods (typically many thousands), and compares this value to previous attempts.
 The delta is then added to a collection with a very conservative estimate for bits of entropy.
 
-Much like the mouse movement technique, we are collecting a lot of data and crediting it for just a little bit of entropy.
+Much like the mouse movement technique, we are collecting a lot of data and assuming it's just a little bit random.
 
 ### Notes
 
