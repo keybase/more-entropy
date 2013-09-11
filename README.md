@@ -34,7 +34,7 @@ c.get_entropy(100, function(vals) {
 
 ### What it's doing
 
-This generator does as many floating point operations as it can in a 1ms-2ms time period (typically many thousands), and compares this value to previous attempts.
+This generator repeatedly does as many floating point operations as it can in 1ms-2ms time periods (typically many thousands), and compares this value to previous attempts.
 The delta is then added to a collection with a very conservative estimate for bits of entropy. For example, while subsequent calls to this
 function vary by many thousands of operations, each one is only credited with up to 4 bits of entropy.
 
@@ -42,14 +42,16 @@ Much like the mouse movement technique, we are collecting a lot of data and cred
 
 ### Notes
 
+ * entropy is calculated by changes in performance; for example, if your process could perform exactly the same amount of work in a unit of time, there would be no entropy.
+ * specifically, the entropy is log(absolute value of delta), capped at 4 bits
  * this should work well even if your system is bogged down (it'll just take longer to get entropy)
- * `get_entropy` can be called as many times as you like
+ * `get_entropy` can be called as many times as you like, even concurrently; it will call back with uniquely calculated data to each request
  * return values are small integers (sometimes < 1000) and may be negative
- * entropy is collected over time, so a request for lots of bits will take a while
+ * entropy is collected over time, so a request for lots of bits could take a while
 
 ### One Big Assumption
 
- * your CPU is not being controlled by an attacker; an extremely coordinated attack on the CPU could produce entropy less than what's claimed
+ * your CPU is not being controlled by an attacker; an extremely coordinated attack on the CPU could produce entropy less than what's requested
 
 ### Options
 
