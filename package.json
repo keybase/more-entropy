@@ -1,0 +1,26 @@
+{
+  "name" : "more-entropy",
+  "version" : "0.0.1",
+  "description" : "Generate more entropy to combine with Node's crypto.rng or window.crypto",
+  "homepage" : "https://github.com/keybase/entropy",
+  "repository" : { 
+    "type" : "git",
+     "url" : "https://github.com/keybase/entropy.git"
+  },
+  "devDependencies" : {
+  },
+  "dependencies" : {
+    "iced-coffee-script" : "*"
+  },
+  "directories" : {
+    "lib" : "lib"
+  },
+  "scripts" : {
+    "make" : "make"
+  },
+  "main" : "lib/main.js",
+  "licenses": [{
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+  }]
+}
