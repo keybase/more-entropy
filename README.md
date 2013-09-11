@@ -8,7 +8,8 @@ of `window.crypto` and a series of coordinates collected from mouse movements or
 Even though the mouse movements of the user are not random, it's extra noise, adding a layer of safety.
 
 By comparison, `more-entropy` is a *userless* generator of some extra noise. It does not require mouse or keyboard input. Instead, 
-it generates entropy by counting how many operations it can perform in a unit of time.
+it generates entropy by counting how many operations it can perform in a unit of time. With really large numbers, the few
+most significant bits can be extracted as extra entropy.
 
 ### Installation
 
