@@ -1,21 +1,21 @@
 more-entropy
 =======
 
-The easiest way to generate pseudorandom numbers in the browser is with `window.crypto`, and in Node.js you can use `crypto.rng`. 
+The easiest way to generate pseudorandom numbers in the browser is with `window.crypto.getRandomValues`, and in Node.js you can use `crypto.rng`. 
 But for the truly paranoid, getting even more entropy is a good idea. For example, one might seed their own key generator with a combination
 of `window.crypto` and a series of coordinates collected from mouse movements or key mashes.
 
 Even though the mouse movements of the user are not very random, it's extra noise, adding a layer of safety. Perhaps each [x,y] mouse
 location is worth a bit or two of entropy.
 
-By comparison, `more-entropy` is a *userless* generator of some extra noise. It does not require mouse or keyboard input. Instead, 
-it generates entropy by counting how many operations it can perform in a unit of time. With really large numbers, the few
-least significant bits can be extracted as randomness.
+`more-entropy` achieves the same results but without requiring user interaction, and ugly integrations. 
+It generates entropy by counting how many operations it can perform in a unit of time, which fluctuates
+unpredictably based on other system processes and low-level architectural specifics (like cache and TLB misses).
 
 A good use of this module is to combine its output with
 `window.crypto.getRandomValue` or `crypto.rng`, and use the
 result as a seed for a deterministic random bit generator (like 
-[HMAC_DRBG](http://csrc.nist.gov/publications/nistpubs/800-90A/SP800-90A.pdf).)
+[HMAC_DRBG](http://csrc.nist.gov/publications/nistpubs/800-90A/SP800-90A.pdf)).
 You'll have an extra layer of protection if you're afraid that the
 standard cryptographic primitives are compromised.
 
