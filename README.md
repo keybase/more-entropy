@@ -27,7 +27,7 @@ var c = new m.Generator();
 
 // get an array of integers with at least 100 bits of combined entropy:
 c.get_entropy(100, function(vals) {
-  console.log(vals);
+  console.log(vals); // [-4358,543,9089,...]
 });
 
 ```
