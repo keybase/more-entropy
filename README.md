@@ -1,7 +1,7 @@
 more-entropy
 =======
 
-The easiest way to generate pseudorandom numbers in the browser is with `window.crypto`, and in NodeJs you can use `crypto.rng`. 
+The easiest way to generate pseudorandom numbers in the browser is with `window.crypto`, and in Node.js you can use `crypto.rng`. 
 But for the truly paranoid, getting even more entropy is a good idea. For example, one might seed their own key generator with a combination
 of `window.crypto` and a series of coordinates collected from mouse movements or key mashes.
 
@@ -11,6 +11,14 @@ location is worth a bit or two of entropy.
 By comparison, `more-entropy` is a *userless* generator of some extra noise. It does not require mouse or keyboard input. Instead, 
 it generates entropy by counting how many operations it can perform in a unit of time. With really large numbers, the few
 least significant bits can be extracted as randomness.
+
+A good use of this module is to combine its output with
+`window.crypto.getRandomValue` or `crypto.rng`, and use the
+result as a seed for a deterministic random bit generator (like 
+[HMAC_DRBG](http://csrc.nist.gov/publications/nistpubs/800-90A/SP800-90A.pdf).)
+You'll have an extra layer of protection if you're afraid that the
+standard cryptographic primitives are compromised.
+
 
 ### Installation
 
@@ -42,9 +50,9 @@ Much like the mouse movement technique, we are collecting a lot of data and assu
 
 ### Notes
 
- * entropy is calculated by changes in performance; for example, extreme high performance with no variation yields zero entropy. Only fluctations are captured.
+ * entropy is calculated by changes in performance; for example, extreme high performance with no variation yields zero entropy. Only fluctuations are captured.
  * this will work even if your system is bogged down (it'll just take longer)
- * it only CPU blocks for bursts up to 2ms, so it's safe in the browser
+ * it only CPU blocks for bursts up to 2ms, so it's safe in the browser and in Node.js
  * `get_entropy` can be called as many times as you like, even concurrently; it will call back with uniquely calculated data to each request
  * return values are small integers (sometimes < 1000) and may be negative
  * entropy is collected over time, so a request for lots of bits could take a while
@@ -60,7 +68,7 @@ Much like the mouse movement technique, we are collecting a lot of data and assu
 ```javascript
 var c = new m.Generator({
   'loop_delay':        10 // how many milliseconds to pause between each operation loop. A lower value will generate entropy faster, but will also be harder on the CPU
-  'work_min':           1 // millisecnds per loop; a higher value blocks the CPU more, so 1 is recommended
+  'work_min':           1 // milliseconds per loop; a higher value blocks the CPU more, so 1 is recommended
   'auto_stop_bits':  4096 // the generator prepares entropy for you before you request it; if it reaches this much unclaimed entropy it will stop working
   'max_bits_per_delta': 4 // a safety cap on how much entropy it can claim per value; 4 (default) is very conservative. a larger value will allow faster entropy generation
 });
