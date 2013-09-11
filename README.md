@@ -39,12 +39,16 @@ function vary by many thousands of operations, each one is only credited with up
 
 Much like the mouse movement technique, we are collecting a lot of data and crediting it for just a little bit of entropy.
 
-
 ### Notes
 
+ * this should work well even if your system is bogged down (it'll just take longer to get entropy)
  * `get_entropy` can be called as many times as you like
  * return values are small integers (sometimes < 1000) and may be negative
  * entropy is collected over time, so a request for lots of bits will take a while
+
+### One Big Assumption
+
+ * your CPU is not being controlled by an attacker; an extremely coordinated attack on the CPU could produce entropy less than what's claimed
 
 ### Options
 
