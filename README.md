@@ -42,8 +42,7 @@ Much like the mouse movement technique, we are collecting a lot of data and cred
 
 ### Notes
 
- * entropy is calculated by changes in performance; for example, if your process could perform exactly the same amount of work in a unit of time, there would be no entropy.
- * specifically, the entropy is log(absolute value of delta), capped at 4 bits
+ * entropy is calculated by changes in performance; for example, if your process could perform exactly the same amount of work in a unit of time, there would be no entropy, regardless of how much work that was.
  * this should work well even if your system is bogged down (it'll just take longer to get entropy)
  * `get_entropy` can be called as many times as you like, even concurrently; it will call back with uniquely calculated data to each request
  * return values are small integers (sometimes < 1000) and may be negative
@@ -51,7 +50,7 @@ Much like the mouse movement technique, we are collecting a lot of data and cred
 
 ### One Big Assumption
 
- * your CPU is not being controlled by an attacker; an extremely coordinated attack on the CPU could produce entropy less than what's requested
+ * your CPU is not shared with an attacker; a carefully timed attack on the CPU could produce entropy less than what's requested
 
 ### Options
 
