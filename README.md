@@ -10,7 +10,7 @@ location is worth a bit or two of entropy.
 
 `more-entropy` achieves the same results but without requiring user interaction, and ugly integrations. 
 It generates entropy by counting how many operations it can perform in a unit of time, which fluctuates
-unpredictably based on other system processes and low-level architectural specifics (like cache and TLB misses).
+unpredictably based on other system processes and low-level architectural specifics (like cache misses and FPU pipelines).
 
 A good use of this module is to combine its output with
 `window.crypto.getRandomValue` or `crypto.rng`, and use the
