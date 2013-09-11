@@ -42,8 +42,9 @@ Much like the mouse movement technique, we are collecting a lot of data and cred
 
 ### Notes
 
- * entropy is calculated by changes in performance; for example, if your process could perform exactly the same amount of work in a unit of time, there would be no entropy, regardless of how much work that was.
- * this should work well even if your system is bogged down (it'll just take longer to get entropy)
+ * entropy is calculated by changes in performance; for example, extreme high performance with no variation yields zero entropy. Only fluctations are captured.
+ * this will work even if your system is bogged down (it'll just take longer)
+ * it only CPU blocks for bursts up to 2ms, so it's safe in the browser
  * `get_entropy` can be called as many times as you like, even concurrently; it will call back with uniquely calculated data to each request
  * return values are small integers (sometimes < 1000) and may be negative
  * entropy is collected over time, so a request for lots of bits could take a while
