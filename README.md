@@ -10,7 +10,7 @@ location is worth a bit or two of entropy.
 
 By comparison, `more-entropy` is a *userless* generator of some extra noise. It does not require mouse or keyboard input. Instead, 
 it generates entropy by counting how many operations it can perform in a unit of time. With really large numbers, the few
-least significant bits can be extracted as extra entropy.
+least significant bits can be extracted as randomness.
 
 ### Installation
 
