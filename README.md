@@ -1,7 +1,7 @@
 more-entropy
 =======
 
-The easiest way to generate pseudorandom numbers in the browser is with `window.crypto.getRandomValues`, and in Node.js you can use `crypto.rng`. 
+The easiest way to generate good pseudorandom numbers in the browser is with `window.crypto.getRandomValues`, and in Node.js you can use `crypto.rng`. 
 But for the truly paranoid, getting even more entropy is a good idea. For example, one might seed their own key generator with a combination
 of `window.crypto` and a series of coordinates collected from mouse movements or key mashes.
 
