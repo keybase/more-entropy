@@ -8,7 +8,7 @@ of `window.crypto` and a series of coordinates collected from mouse movements or
 Even though the mouse movements of the user are not very random, it's extra noise, adding a layer of safety. Perhaps each [x,y] mouse
 location is worth a bit or two of entropy.
 
-`more-entropy` achieves the similar results (likely entropy) but without user interaction or ugly integration with your DOM. 
+`more-entropy` achieves similar results (likely entropy) but without user interaction or ugly integration with your DOM. 
 It generates large numbers by counting how many operations it can perform in a unit of time, which fluctuates
 unpredictably based on other system processes and low-level architectural specifics (like cache misses and FPU pipelines).
 
