@@ -9,7 +9,7 @@ default: $(FILES)
 all: $(FILES)
 
 lib/%.js: src/%.iced
-	$(ICED) -I node -c -o lib $<
+	$(ICED) -I browserify -c -o lib $<
 
 test: $(FILES)
 	$(ICED) test/test.iced
