@@ -11,7 +11,7 @@
     "iced-coffee-script": "^1.7.1-c"
   },
   "dependencies": {
-    "iced-runtime": ">=1.0.0"
+    "iced-runtime": ">=0.0.1"
   },
   "directories": {
     "lib": "lib"
