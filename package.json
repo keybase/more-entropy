@@ -1,6 +1,6 @@
 {
   "name": "more-entropy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generate more entropy to combine with Node's crypto.rng or window.crypto",
   "homepage": "https://github.com/keybase/entropy",
   "repository": {
