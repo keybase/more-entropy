@@ -4,7 +4,7 @@ Generator = class Generator
   constructor: (opts) ->
     opts                = opts or {}
     @lazy_loop_delay    = opts.lazy_loop_delay    or 30                   # milliseconds; pause in loops before generate called
-    @loop_delay         = opts.loop_delay         or 3                    # milliseconds; pause between loops
+    @loop_delay         = opts.loop_delay         or 5                    # milliseconds; pause between loops
     @work_min           = opts.work_min           or 1                    # milliseconds; 1 recommended
     @auto_stop_bits     = opts.auto_stop_bits     or 4096                 # collector will pause if this many unused bits are collected
     @max_bits_per_delta = opts.max_bits_per_delta or 4                    # a ceiling on how many bits of entropy claimable per timer
