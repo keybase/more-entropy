@@ -9,9 +9,12 @@ Generator = class Generator
     @max_bits_per_delta = opts.max_bits_per_delta or 4     # a ceiling on how many bits of entropy claimable per timer
     @entropies          = []
     @running            = true
+    @killed             = false
     @timer_race_loop()
 
   generate: (bits_wanted, cb) ->
+    if @killed
+      throw new Error 'this more-entropy generator has been killed'
     harvested_bits = 0
     res = []
     while harvested_bits < bits_wanted
@@ -25,6 +28,7 @@ Generator = class Generator
 
   stop:   -> @running = false
   resume: -> @running = true
+  kill:   -> @killed  = true
 
   reset: ->
     @entropies  = []
@@ -37,10 +41,10 @@ Generator = class Generator
 
   timer_race_loop: ->
     @_last_count = null
-    while true
+    while not @killed
       if @running and (@count_unused_bits() < @auto_stop_bits)
         count = @millisecond_count()
-        if @_last_count? and (delta = count - @_last_count)   
+        if @_last_count? and (delta = count - @_last_count)
           entropy = Math.floor @log_2 Math.abs delta
           entropy = Math.min   @max_bits_per_delta, entropy
           v       = [delta, entropy]
@@ -53,7 +57,7 @@ Generator = class Generator
 
   millisecond_count: ->
     # ---------------------------------------
-    # sees how high we can count between 
+    # sees how high we can count between
     # N and N+1 milliseconds, doing floating
     # point operations along the way
     # ---------------------------------------
