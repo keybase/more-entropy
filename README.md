@@ -23,7 +23,7 @@ standard random number generators are compromised.
 ### Installation
 
 ```bash
-npm install -g more-entropy
+npm install more-entropy
 ```
 
 ### Usage
