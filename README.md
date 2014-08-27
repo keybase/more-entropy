@@ -53,7 +53,7 @@ Much like the mouse movement technique, we are collecting a lot of data and assu
  * entropy is calculated by changes in performance; for example, extreme high performance with no variation yields zero entropy. Only fluctuations are captured.
  * this will work even if your system is bogged down (it'll just take longer)
  * it only CPU blocks for bursts up to 2ms, so it's safe in the browser and in Node.js
- * `get_entropy` can be called as many times as you like, even concurrently; it will call back with uniquely calculated data to each request
+ * `generate` can be called as many times as you like, even concurrently; it will call back with uniquely calculated data to each request
  * return values are small integers (sometimes < 1000) and may be negative
  * entropy is collected over time, so a request for lots of bits could take a while
 
