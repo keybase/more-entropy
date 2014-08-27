@@ -1,20 +1,20 @@
 more-entropy
 =======
 
-The easiest way to generate good pseudorandom numbers in the browser is with `window.crypto.getRandomValues`, and in Node.js you can use `crypto.rng`. 
+The easiest way to generate good pseudorandom numbers in the browser is with `window.crypto.getRandomValues`, and in Node.js you can use `crypto.rng`.
 But for the truly paranoid, getting even more entropy is a good idea. For example, one might seed their own key generator with a combination
 of `window.crypto` and a series of coordinates collected from mouse movements or key mashes.
 
 Even though the mouse movements of the user are not very random, it's extra noise, adding a layer of safety. Perhaps each [x,y] mouse
 location is worth a bit or two of entropy.
 
-`more-entropy` achieves similar results but without user interaction or ugly integration with your DOM. 
+`more-entropy` achieves similar results but without user interaction or ugly integration with your DOM.
 It generates large numbers by counting how many operations it can perform in a unit of time, which fluctuates
 unpredictably based on other system processes and low-level architectural specifics (like cache misses and FPU pipelines).
 
 A good use of this module is to combine its output with
 `window.crypto.getRandomValue` or `crypto.rng`, and use the
-result as a seed for a deterministic random bit generator (like 
+result as a seed for a deterministic random bit generator (like
 [HMAC_DRBG](http://csrc.nist.gov/publications/nistpubs/800-90A/SP800-90A.pdf)).
 You'll have an extra layer of protection if you're afraid that the
 standard random number generators are compromised.
@@ -35,7 +35,7 @@ var m = require('more-entropy');
 var c = new m.Generator();
 
 // get an array of integers with at least 100 bits of combined entropy:
-c.get_entropy(100, function(vals) {
+c.generate(100, function(vals) {
   console.log(vals); // [-4358,543,9089,...]
 });
 
