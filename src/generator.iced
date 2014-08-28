@@ -57,8 +57,8 @@ Generator = class Generator
       if @count_unused_bits() < @auto_stop_bits
         count = @millisecond_count()
         if @_last_count? and (delta = count - @_last_count)
-          entropy = Math.floor @log_2 Math.abs delta
-          entropy = Math.min   @max_bits_per_delta, entropy
+          entropy = Math.max 0, (Math.floor(@log_2 Math.abs delta) - 1)
+          entropy = Math.min @max_bits_per_delta, entropy
           v       = [delta, entropy]
           @entropies.push v
         @_last_count = count
