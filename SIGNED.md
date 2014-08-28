@@ -1,16 +1,22 @@
-##### Signed by https://keybase.io/max
+##### Signed by https://keybase.io/chris
 ```
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
 Comment: GPGTools - https://gpgtools.org
 
-iQEcBAABCgAGBQJTpIVwAAoJEJgKPw0B/gTfpHYH/ib6YbBLDanjQSQ+S4CaoOcP
-1tV7uhKEnwOpzPLxoj0XG06BgNuernAqtPNRqdLAIcaGhDmebZ/1nQWTV034FKSV
-UXfIeVZIaYhZgcwpoMU62mB51kt3wyMC0jok4tLFjSCKys7YutwHT1NKjyd+5tdH
-YXWlbw56QF7ZMkFI0LW5PVPmLpp5n6FfCxvCMJnKh1G+dJO4IBjONffkL4Rs9Bf2
-s+/xCDKSESFV/dEDoQtAMYkmc3AuXTumtt6vWEmtQkWvEiXuff+j7tFMLj2MSlqv
-A82ZtxkdWYMKaI2CVmv+H31vaHNpfXo/Ct2KtvYJgF/GMNBIhNNKqpQzGbKAgoE=
-=BJxQ
+iQIcBAABCgAGBQJT/nviAAoJENIkQTsc+mSQNZIQAJFA6LbiXK3aWAWY86KkqjyW
+3Sl8oxfhIFlcdBOUXcDbMwl2Fgwaoa/w+no5zgKLONP9m5O8qMGwxd6BlhOLXEDL
+tUONjcldRWGakQ8mIZ4ksLCbTbVShSh4qdno4l3OwS/dsFoRmY/l9SfBmXdxWdO5
+gdW35Pfdvx98LGVjlCxTBR8d65Mr+35772cG9j6wEocqwQb2dYn4YJeUE9b6Lmox
+sIQdC55jIiRn1lZEAChK4dnV0zSWdn6qjeaAWaZ7TfwCLWp4T19k/H9iO0BKDcF9
+qZY/H6HxCDTxU9ze7BUAGxhyBEP88YNfAryfhlx2Pxx2nUs3xZnwcxF6kDUN8RBC
+8fRIj+010qt+HiQQ36TbbQ3zoTSFp5e1UqrrZsjn0FaffG+UCyGdYRuOynruShN9
+NimQRh5dwdMRIX/WVUXv0IpzuBH0f1uycAJy2/WOGKaQg84r05PS+V4lklsiaWcy
+qbuBY8g7rmYNTHcBv/LscoA7wDI+athfUVH/Z3lGowJh4s2nbJEnu2nyo1rTwqw4
+MD7peEWl9TJmxUixdq4COLAs3lyFYWdNQxPGHjXEMFEl5/J5y/s9d3qsHls76Qxw
+xEktq1nmgYylkh5o3t6J6QQ3t7N94Nz91Uy3NMTYSAMKw7SQSibbAW+9kCnexiQm
+12uzS6Bo6OV40jvSPPJr
+=CZWl
 -----END PGP SIGNATURE-----
 
 ```
@@ -27,16 +33,16 @@ size  exec  file                contents
 107           .gitignore        f5c3f45c2ad04fe63c9365f970a37b27d39ed721b71e889ff8f2b610143a7905
 1074          LICENSE           a431ce5edcc96f2047072de28425e99163465d8ac0484b6cf54a9aa55231a16e
 217           Makefile          6721d873ee6a7d80da5d8d1df66bfdf3f8365396bad705c13683ef95979a984a
-3596          README.md         59a50463a5fb6fa3904532001c9190cc4ec9a9e12e456f287b096ec78d015202
+3584          README.md         bef73644107011c404a66775c7bd46bc5fa32a08a7d40e114479233580521cc6
               lib/                                                                              
-5698            generator.js    e958adddfedd4e92e8778670d01323085a14abef3f16fc7212abf7f366b3e3e4
+6882            generator.js    53c1c9f4205e6f70f6ad29e345449bd350f09a8fbeeeb3b01f87aed1575c7be2
 132             main.js         6db8bf9163e15abaf89a4af5b50afa2fd0f1a552adc94f069a6c1d393fc9fd79
-634           package.json      dac2fc410da687f84f448ade06f4c7ffb7ad90d1353f6a6f475f8105021673b5
+635           package.json      7e0be37e89488ab329855651b617f5b51f9a0ceaeb4d20e366e8eda0423d6048
               src/                                                                              
-2078            generator.iced  68ae5500546c6fa7570361fb8ff60d50e85d965c761f5a4307ad477f9020aaeb
+2668            generator.iced  e85ee970adf857d34d5b6553f509ca362c198ba58ad8353471073ed332c30025
 57              main.iced       a246ca8c283f8023ae8379262178664ed69399b06307c9832b3993243e7296c5
               test/                                                                             
-129             test.iced       63f498807580e02536ca665c3b48dae6080388420ad410417d05aa172ef95b55
+469             test.iced       8d9d0b10c015bc241396e1587409561b0a8dd51c37d4b1bc66fd280c4c0c6946
 ```
 
 #### Ignore
